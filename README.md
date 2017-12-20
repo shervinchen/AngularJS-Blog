@@ -1,2 +1,2 @@
 # AngularJS-Blog
-A personal blog demo made by AngularJS
+A personal blog made by AngularJS
