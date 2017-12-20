@@ -1,0 +1,27 @@
+{
+  "name": "AngularJS-Blog",
+  "homepage": "https://github.com/csd758371536/AngularJS-Blog",
+  "authors": [
+    "csdoker <csd758371536@qq.com>"
+  ],
+  "description": "A personal blog made by AngularJS",
+  "main": "",
+  "keywords": [
+    "personal",
+    "blog",
+    "AngularJS"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.7",
+    "angular-ui-router": "^1.0.11",
+    "angular-cookies": "^1.6.7"
+  }
+}

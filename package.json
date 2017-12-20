@@ -1,0 +1,37 @@
+{
+  "name": "angularjs-blog",
+  "version": "1.0.0",
+  "description": "A personal blog made by AngularJS",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csd758371536/AngularJS-Blog.git"
+  },
+  "keywords": [
+    "personal",
+    "blog",
+    "AngularJS"
+  ],
+  "author": "csdoker",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csd758371536/AngularJS-Blog/issues"
+  },
+  "homepage": "https://github.com/csd758371536/AngularJS-Blog#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-connect": "^5.0.0",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-less": "^3.3.2",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-open": "^2.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-uglify": "^3.0.0"
+  }
+}
