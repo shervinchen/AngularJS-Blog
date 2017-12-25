@@ -1,0 +1,75 @@
+/**
+* Author: csdoker
+* CreateTime: 2017/12/25
+* Tips: 页面公用——头部样式
+*/
+.header {
+  border-bottom: 1px solid #f1f1f1;
+  margin-bottom: 30px;
+  padding: 24px 0;
+  .top {
+    position: relative;
+    font-size: 0;
+    .site-name {
+      display: inline-block;
+      vertical-align: middle;
+      color: #3a3a3a;
+      font-size: 28px;
+      line-height: 50px;
+      font-family: STHeiti,"Microsoft Yahei";
+      font-weight: 200;
+      &:hover {
+        color: @blogColor;
+      }
+    }
+    .site-menu {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 0;
+      .nav {
+        display: inline-block;
+        vertical-align: middle;
+        font-size: 20px;
+        margin: 10px 18px;
+        color: #3a3a3a;
+        border-bottom: 2px solid transparent;
+        line-height: 30px;
+        font-weight: 200;
+        &.current {
+          border-bottom: 2px solid @blogColor;
+        }
+        &:hover {
+          color: @blogColor;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .header {
+    padding: 0;
+    .top {
+      background-color: @blogColor;
+      padding: 0 20px;
+      .site-name {
+        font-size: 26px;
+        color: @defaultColor;
+        &:hover {
+          color: @defaultColor;
+        }
+      }
+      .site-menu {
+        .nav {
+          color: @defaultColor;
+          margin: 10px 8px;
+          &:hover {
+            color: @defaultColor;
+          }
+        }
+      }
+    }
+  }
+}

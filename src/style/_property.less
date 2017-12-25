@@ -3,6 +3,27 @@
 * CreateTime: 2017/12/23
 * Tips: 定义项目中的公共样式
 */
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 769px) {
+  .container {
+    max-width: 728px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 952px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1160px;
+  }
+}
+
 .bg-w {
   background-color: #fff;
 }
@@ -81,15 +102,17 @@
   content: '.';
 }
 
+.clearfix {
+  zoom: 1;
+}
 .clearfix:after,
 .clearfix:before {
-    content: " ";
+    content: "";
     display: table;
 }
 .clearfix:after {
     clear: both;
 }
-
 
 /*position: fixed 的缩写*/
 .p-f {
