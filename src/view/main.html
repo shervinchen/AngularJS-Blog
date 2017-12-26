@@ -5,10 +5,17 @@
  -->
 <div app-header></div>
 <div class="body">
-  <div app-post-list></div>
-  <div app-recent-posts></div>
-  <div app-category></div>
-  <div app-recent-comments></div>
-  <div app-page-navigator></div>
+	<div class="container">
+		<div class="container-left">
+			<div app-post-list></div>
+			<div app-post-list-navigator></div>
+		</div>
+		<div class="container-right">
+			
+		</div>
+		<div app-post-recent></div>
+		<div app-post-category></div>
+		<div app-post-recent-comments></div>
+	</div>
 </div>
 <div app-footer></div>
