@@ -1,0 +1,28 @@
+/**
+* Author: csdoker
+* CreateTime: 2017/12/26
+* Tips: 页面公用——页脚
+*/
+.footer {
+	line-height: 1.5;
+	color: #888;
+	font-family: STHeiti,"Microsoft Yahei";
+	font-weight: 300;
+	font-size: 14px;
+	margin-top: 28px;
+	background-color: #f8f8f8;
+	.container {
+		padding: 28px 0 42px;
+		a:hover {
+			color: @blogColor;
+		}
+	}
+}
+
+@media (max-width: 768px) {
+	.footer {
+		.container {
+			padding: 28px 20px 42px;
+		}
+	}
+}

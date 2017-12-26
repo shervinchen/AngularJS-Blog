@@ -25,7 +25,7 @@
     .site-menu {
       position: absolute;
       top: 0;
-      right: 160px;
+      right: 176px;
       display: inline-block;
       vertical-align: middle;
       font-size: 0;
@@ -33,7 +33,7 @@
         display: inline-block;
         vertical-align: middle;
         font-size: 20px;
-        margin: 10px 18px;
+        margin: 10px 0px 10px 36px;
         color: #3a3a3a;
         border-bottom: 2px solid transparent;
         line-height: 30px;
@@ -55,7 +55,7 @@
       vertical-align: middle;
       input {
         box-sizing: border-box;
-        width: 160px;
+        width: 140px;
         height: 38px;
         line-height: 38px;
         background-color: #f9f9f9;
@@ -64,7 +64,7 @@
         border-radius: 20px;
         font-size: 14px;
         &:focus {
-          width: 312px;
+          width: 328px;
         }
         &:focus+i {
           opacity: 1;
@@ -83,6 +83,18 @@
     }
   }
 }
+@media (max-width: 992px) {
+  .header {
+    .top {
+      .site-menu {
+        right: 0;
+      }
+      .site-search {
+        display: none;
+      }
+    }
+  }
+}
 @media (max-width: 768px) {
   .header {
     padding: 0;
@@ -97,25 +109,14 @@
         }
       }
       .site-menu {
+        right: 20px;
         .nav {
           color: @defaultColor;
-          margin: 10px 8px;
+          margin: 10px 0 10px 16px;
           &:hover {
             color: @defaultColor;
           }
         }
-      }
-    }
-  }
-}
-@media (max-width: 992px) {
-  .header {
-    .top {
-      .site-menu {
-        right: 0;
-      }
-      .site-search {
-        display: none;
       }
     }
   }
