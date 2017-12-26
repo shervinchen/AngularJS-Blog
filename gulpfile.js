@@ -14,8 +14,18 @@ var app = {
 /**
  * 通过bower安装的库文件
  */
-gulp.task('lib', function() {
+gulp.task('bower', function() {
 	gulp.src('bower_components/**/*.js')
+	.pipe(gulp.dest(app.devPath + 'vendor'))
+	.pipe(gulp.dest(app.prdPath + 'vendor'))
+	.pipe($.connect.reload());
+});
+
+/**
+ * 通过第三方安装的库文件
+ */
+gulp.task('lib', function() {
+	gulp.src('lib/**/*')
 	.pipe(gulp.dest(app.devPath + 'vendor'))
 	.pipe(gulp.dest(app.prdPath + 'vendor'))
 	.pipe($.connect.reload());
@@ -79,7 +89,7 @@ gulp.task('image', function() {
 	.pipe($.connect.reload());
 });
 
-gulp.task('build', ['lib', 'html', 'json', 'less', 'js', 'image']);
+gulp.task('build', ['lib', 'bower', 'html', 'json', 'less', 'js', 'image']);
 
 gulp.task('clean', function() {
 	gulp.src([app.devPath, app.prdPath])
@@ -94,7 +104,8 @@ gulp.task('serve', ['build'], function() {
 	});
 	open('http://localhost:8000');
 
-	gulp.watch('bower_components/**/*', ['lib']);
+	gulp.watch('bower_components/**/*', ['bower']);
+	gulp.watch('lib/**/*', ['lib']);
 	gulp.watch(app.srcPath + '**/*.html', ['html']);
 	gulp.watch(app.srcPath + 'data/**/*.json', ['json']);
 	gulp.watch(app.srcPath + 'style/**/*.less', ['less']);

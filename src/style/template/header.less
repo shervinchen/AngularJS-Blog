@@ -25,7 +25,7 @@
     .site-menu {
       position: absolute;
       top: 0;
-      right: 0;
+      right: 160px;
       display: inline-block;
       vertical-align: middle;
       font-size: 0;
@@ -44,6 +44,41 @@
         &:hover {
           color: @blogColor;
         }
+      }
+    }
+    .site-search {
+      position: absolute;
+      top: 50%;
+      margin-top: -19px;
+      right: 0;
+      display: inline-block;
+      vertical-align: middle;
+      input {
+        box-sizing: border-box;
+        width: 160px;
+        height: 38px;
+        line-height: 38px;
+        background-color: #f9f9f9;
+        padding: 0 36px 0 20px;
+        transition: width .15s ease-in .1s;
+        border-radius: 20px;
+        font-size: 14px;
+        &:focus {
+          width: 312px;
+        }
+        &:focus+i {
+          opacity: 1;
+        }
+      }
+      i {
+        position: absolute;
+        right: 10px;
+        top: 50%;
+        margin-top: -12px;
+        width: 24px;
+        height: 24px;
+        background: transparent url(../image/icon-search.png) no-repeat center center;
+        opacity: .5;
       }
     }
   }
@@ -69,6 +104,18 @@
             color: @defaultColor;
           }
         }
+      }
+    }
+  }
+}
+@media (max-width: 992px) {
+  .header {
+    .top {
+      .site-menu {
+        right: 0;
+      }
+      .site-search {
+        display: none;
       }
     }
   }
