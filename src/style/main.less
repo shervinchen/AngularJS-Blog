@@ -4,5 +4,34 @@
 * Tips: 博客主页——文章列表页
 */
 .body {
-  
+  .container {
+    font-size: 0;
+    .container-left {
+      width: 100%;
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .container-right {
+      display: inline-block;
+      vertical-align: middle;
+    }
+  }
+}
+@media (min-width: 992px) {
+  .body {
+    .container {
+      .container-left {
+        width: 66%;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .body {
+    .container {
+      .container-left {
+        padding: 0 10px;
+      }
+    }
+  }
 }
