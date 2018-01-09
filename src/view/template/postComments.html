@@ -1,0 +1,27 @@
+<div class="comments">
+	<div class="comments-respond">
+		<a class="cancel-comment">取消回复</a>
+		<div class="comments-form">
+			<div class="comments-info">
+				<input type="text" id="author" class="comments-input" />
+				<label for="author" class="comments-label required">昵称</label>
+			</div>
+			<div class="comments-info">
+				<input type="text" id="email" class="comments-input" />
+				<label for="email" class="comments-label required">邮箱 [不公布]</label>
+			</div>
+			<div class="comments-info">
+				<input type="text" id="url" class="comments-input" placeholder="https://example.com" />
+				<label for="url" class="comments-label required">网站</label>
+			</div>
+			<div class="comments-info">
+				<textarea rows="3" class="comments-textarea"></textarea>
+			</div>
+		</div>
+		<div class="comments-button">
+			提交评论
+		</div>
+	</div>
+	<div class="comments-title">已有<em>10</em>条评论</div>
+	<div app-post-comments-list></div>
+</div>
