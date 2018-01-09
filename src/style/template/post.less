@@ -1,0 +1,47 @@
+.post {
+  padding: 10px 0;
+  margin-bottom: 16px;
+  .post-title {
+    display: block;
+    margin-top: 20px;
+    margin-bottom: 6px;
+    font-size: 24px;
+    color: #555;
+    line-height: 32px;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+      color: @blogColor;
+    }
+  }
+  .post-meta {
+    display: block;
+    white-space: nowrap;
+    font-size: 15px;
+    color: #bbb;
+    margin-bottom: 30px;
+    line-height: 26px;
+    font-family: "Helvetica Neue", "Microsoft Yahei",
+    	"Hiragino Sans GB", "WenQuanYi Micro Hei", sans-serif;
+    font-weight: 200;
+  }
+  .post-content {
+    font-size: 16px;
+    word-wrap: break-word;
+    p {
+      line-height: 28px;
+      font-weight: 200;
+      margin-bottom: 18px;
+      color: #333;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .post {
+    .post-title, .post-meta {
+      text-align: center;
+    }
+  }
+}
