@@ -13,7 +13,15 @@ BlogApp.config(['$stateProvider', '$urlRouterProvider',
     		url: '/about',
     		templateUrl: 'view/about.html',
     		controller: 'aboutCtrl'
-    	});
+    	}).state('search', {
+            url: '/search/:keyword',
+            templateUrl: 'view/search.html',
+            controller: 'searchCtrl'
+        }).state('/mainlist', {
+            url: '/mainlist/:page',
+            templateUrl: 'view/mainlist.html',
+            controller: 'mainlistCtrl'
+        });
     	$urlRouterProvider.otherwise("main");
 	}
 ]);

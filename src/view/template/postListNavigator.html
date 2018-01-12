@@ -1,9 +1,9 @@
 <ol class="page-navigator">
-  <li class="pre">
+  <li class="pre" ng-if="isShowPre">
     <a href="#">« 前一页</a>
   </li>
-  <li class="current">
-    <a href="javascript:;">1</a>
+  <li>
+    <a class="current" ui-sref="mainlist({page:1})">1</a>
   </li>
   <li>
     <a href="javascript:;">2</a>
