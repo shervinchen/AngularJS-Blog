@@ -51,6 +51,13 @@ gulp.task('json', function() {
 	.pipe($.connect.reload());
 });
 
+gulp.task('md', function() {
+	gulp.src(app.srcPath + 'data/**/*.md')
+	.pipe(gulp.dest(app.devPath + 'data'))
+	.pipe(gulp.dest(app.prdPath + 'data'))
+	.pipe($.connect.reload());
+});
+
 /**
  * less格式的样式文件
  */
@@ -89,7 +96,7 @@ gulp.task('image', function() {
 	.pipe($.connect.reload());
 });
 
-gulp.task('build', ['lib', 'bower', 'html', 'json', 'less', 'js', 'image']);
+gulp.task('build', ['lib', 'bower', 'html', 'json', 'md', 'less', 'js', 'image']);
 
 gulp.task('clean', function() {
 	gulp.src([app.devPath, app.prdPath])
@@ -108,6 +115,7 @@ gulp.task('serve', ['build'], function() {
 	gulp.watch('lib/**/*', ['lib']);
 	gulp.watch(app.srcPath + '**/*.html', ['html']);
 	gulp.watch(app.srcPath + 'data/**/*.json', ['json']);
+	gulp.watch(app.srcPath + 'data/**/*.md', ['md']);
 	gulp.watch(app.srcPath + 'style/**/*.less', ['less']);
 	gulp.watch(app.srcPath + 'script/**/*.js', ['js']);
 	gulp.watch(app.srcPath + 'image/**/*', ['image']);
