@@ -12,7 +12,7 @@ BlogApp.directive('appPost', [function() {
       postData: '='
     },
     link: function (scope, iElement, iAttrs, controller) {
-    	console.log(scope.postData);
+      
     }
   };
 }]);

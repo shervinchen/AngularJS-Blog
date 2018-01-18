@@ -9,11 +9,10 @@ BlogApp.directive('appPostContent', [function() {
     restrict: 'ECAM',
     replace: true,
     scope: {
-      postDataContent: '='
+      postContentData: '='
     },
     link: function (scope, iElement, iAttrs, controller) {
-    	// console.log(postDataContent);
-    	iElement[0].innerHTML = marked('');
+    	// iElement[0].innerHTML = marked(scope.postContentData);
     }
   };
 }]);

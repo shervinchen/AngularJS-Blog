@@ -1,4 +1,4 @@
-<!-- ## aaa
+## aaa
 Node.js 自带强大的加密功能 Crypto，它是基于 OpenSSL 库实现的加密技术。DES是一种对称加密算法，密匙长度必须是8的整数倍，在一些简单的应用场景经常被使用。
 为了网络上信息传输的安全（防止第三方窃取信息看到明文），发送发和接收方分别进行加密和解密，这样信息在网络上传输的时候就是相对安全的。
 
@@ -22,5 +22,5 @@ var Grid = function(gridRow, gridCol, type, isWalkable) {
     this.gridType = type; // 格子类型 0默认 1障碍 2猫
     this.isWalkable = isWalkable; // 格子是否可行   true可行 false不可行
 };
-``` -->
+```
 *This* **is** [markdown](https://daringfireball.net/projects/markdown/) in a include file.
