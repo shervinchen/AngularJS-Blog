@@ -5,8 +5,15 @@
 */
 BlogApp.controller('aboutCtrl', ['$http', '$scope',
   function($http, $scope) {
-    // $http.get('/data/positionList.json').then(function(response) {
-    //   $scope.list = response.data;
-    // }).catch(function(response) {});
+    $http({
+        method: 'GET',
+        url: '../data/post1.json'
+    }).then(function(response) {
+        $scope.post = response.data;
+      	console.log($scope.post);
+    }, function(response) {
+        // 请求失败执行代码
+        console.log('request failed');
+    });
   }
 ]);

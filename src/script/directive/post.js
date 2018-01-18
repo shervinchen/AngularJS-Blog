@@ -8,8 +8,11 @@ BlogApp.directive('appPost', [function() {
     templateUrl: 'view/template/post.html',
     restrict: 'ECAM',
     replace: true,
-    link: function ($scope) {
-
+    scope: {
+      postData: '='
+    },
+    link: function (scope, iElement, iAttrs, controller) {
+    	console.log(scope.postData);
     }
   };
 }]);

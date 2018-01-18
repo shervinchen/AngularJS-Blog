@@ -9,7 +9,7 @@ BlogApp.directive('appPostTags', [function() {
     restrict: 'ECAM',
     replace: true,
     link: function ($scope) {
-
+    	
     }
   };
 }]);
