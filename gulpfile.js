@@ -15,7 +15,7 @@ var app = {
  * 通过bower安装的库文件
  */
 gulp.task('bower', function() {
-	gulp.src('bower_components/**/*.js')
+	gulp.src(['bower_components/**/*.js','bower_components/**/*.css'])
 	.pipe(gulp.dest(app.devPath + 'vendor'))
 	.pipe(gulp.dest(app.prdPath + 'vendor'))
 	.pipe($.connect.reload());

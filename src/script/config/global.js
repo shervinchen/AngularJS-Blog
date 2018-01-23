@@ -31,3 +31,10 @@ BlogApp.run(['$rootScope',
 	    console.log(marked('I am using __markdown__.'));
 	}
 ]);
+
+// BlogApp.config(function($httpProvider) {
+//     //允许跨域请求
+//     $httpProvider.defaults.useXDomain = true;
+//     //删除用于识别ajax调用的XMLHttpRequests头，防止拦截CORS
+//     delete $httpProvider.defaults.headers.common['X-Requested-With'];
+// });

@@ -24,5 +24,8 @@
     "angular-ui-router": "^1.0.11",
     "angular-cookies": "^1.6.7",
     "angular-sanitize": "^1.6.8"
+  },
+  "devDependencies": {
+    "github-markdown-css": "^2.10.0"
   }
 }
