@@ -13,14 +13,18 @@ BlogApp.config(['$stateProvider', '$urlRouterProvider',
     		url: '/about',
     		templateUrl: 'view/about.html',
     		controller: 'aboutCtrl'
-    	}).state('search', {
+    	}).state('post', {
+        url: '/post/:postid',
+        templateUrl: 'view/post.html',
+        controller: 'postCtrl'
+      }).state('search', {
           url: '/search/:keyword',
           templateUrl: 'view/search.html',
           controller: 'searchCtrl'
       }).state('mainlist', {
           url: '/mainlist/:page',
           templateUrl: 'view/main.html',
-          controller: 'mainCtrl'
+          controller: 'mainlistCtrl'
       });
     	$urlRouterProvider.otherwise("main");
 	}

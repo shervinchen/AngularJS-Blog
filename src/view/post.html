@@ -1,14 +1,14 @@
 <!--
   Author: csdoker
-  CreateTime: 2017/12/25
-  Tips: 博客主页——文章列表页
+  CreateTime: 2018/1/24
+  Tips: 博客文章页
  -->
 <div app-header></div>
 <div class="body">
 	<div class="container">
 		<div class="container-left">
-			<div app-post-list post-list-datas="postlist"></div>
-			<div app-post-list-navigator></div>
+    		<div app-post post-data="post"></div>
+    		<div app-post-comments></div>
 		</div>
 		<div class="container-right">
 			<div app-post-recent></div>

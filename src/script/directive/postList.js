@@ -8,6 +8,9 @@ BlogApp.directive('appPostList', [function() {
     templateUrl: 'view/template/postList.html',
     restrict: 'ECAM',
     replace: true,
+    scope: {
+      postListDatas: '='
+    },
     link: function ($scope) {
 
     }

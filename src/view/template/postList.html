@@ -1,66 +1,13 @@
 <div class="post-list">
-  <article class="post">
-    <a class="post-title">适用移动端的样式重置</a>
-    <time class="post-meta">November 24, 2017</time>
+  <article class="post" ng-repeat="postListData in postListDatas">
+    <a class="post-title" ui-sref="post({postid:postListData.postId})" ng-bind="postListData.postTitle"></a>
+    <time class="post-meta" ng-bind="postListData.postDate"></time>
     <div class="post-content">
       <!-- 这一部分就是通过markdown渲染的文章 然后节选出来显示在列表 -->
-      <p>这份移动端样式重置是我以前在工作中总结出来的精华，比较简洁可靠。</p>
+      <p class="markdown-body" ng-bind-html="postListData.postContent"></p>
       <!-- -->
       <p class="more">
-        <a href="javascript:;" title="适用移动端的样式重置">- Read More -</a>
-      </p>
-    </div>
-  </article>
-  <article class="post">
-    <a class="post-title">Linux 下安装 Python3</a>
-    <time class="post-meta">January 10, 2017</time>
-    <div class="post-content">
-      <!-- 这一部分就是通过markdown渲染的文章 然后节选出来显示在列表 -->
-      <p>虽然 Linux 以及 Mac OS 都自带的是 Python2，但 Python3 代表现在和未来，并且对 unicode 支持更友好，如果开发一个新项目，还是推荐使用 Python3。</p>
-      <!-- -->
-      <p class="more">
-        <a href="javascript:;" title="适用移动端的样式重置">- Read More -</a>
-      </p>
-    </div>
-  </article>
-  <article class="post">
-    <a class="post-title">Node.js 中的 DES 加解密</a>
-    <time class="post-meta">November 24, 2017</time>
-    <div class="post-content">
-      <!-- 这一部分就是通过markdown渲染的文章 然后节选出来显示在列表 -->
-      <p>Node.js 自带强大的加密功能 Crypto，它是基于 OpenSSL 库实现的加密技术。
-        DES 是一种对称加密算法，密匙长度必须是8的整数倍，在一些简单的应用场景经常被使用。</p>
-      <p>为了网络上信息传输的安全（防止第三方窃取信息看到明文），发送发和接收方分别进行加密和解密，这样信息在网络上传输的时候就是相对安全的。</p>
-      <!-- -->
-      <p class="more">
-        <a href="javascript:;" title="适用移动端的样式重置">- Read More -</a>
-      </p>
-    </div>
-  </article>
-  <article class="post">
-    <a class="post-title">禁止 favicon.ico 请求</a>
-    <time class="post-meta">December 23, 2015</time>
-    <div class="post-content">
-      <!-- 这一部分就是通过markdown渲染的文章 然后节选出来显示在列表 -->
-      <p>favicon.ico 图标用于收藏夹图标和浏览器标签上的显示，如果不设置，浏览器会请求网站根目录的这个图标，如果网站根目录也没有这图标会产生 404。
-        出于优化的考虑，要么就有这个图标，要么就禁止产生这个请求。</p>
-      <p>在做 H5 混合应用的时候，不希望产生 favicon.ico 的请求。</p>
-      <!-- -->
-      <p class="more">
-        <a href="javascript:;" title="适用移动端的样式重置">- Read More -</a>
-      </p>
-    </div>
-  </article>
-  <article class="post">
-    <a class="post-title">禁止密码表单被自动填充</a>
-    <time class="post-meta">May 14, 2015</time>
-    <div class="post-content">
-      <!-- 这一部分就是通过markdown渲染的文章 然后节选出来显示在列表 -->
-      <p>Chrome 浏览器有个自动填充密码的功能。通常在录完一个密码表单点击提交的时候，浏览器顶部会出现一个提示，上面有两个按钮，“保存密码”和“此站点一律不保存密码”，
-        当然也可选择最右边的“X”关掉。很多喜欢偷懒的用户可能就会点击“保存密码”，于是每次访问改网站的时候都会自动填充用户名和密码。</p>
-      <!-- -->
-      <p class="more">
-        <a href="javascript:;" title="适用移动端的样式重置">- Read More -</a>
+        <a href="javascript:;" title="postListData.postTitle">- Read More -</a>
       </p>
     </div>
   </article>

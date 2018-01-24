@@ -8,6 +8,9 @@ BlogApp.directive('appPostTags', [function() {
     templateUrl: 'view/template/postTags.html',
     restrict: 'ECAM',
     replace: true,
+    scope: {
+      postTagDatas: '='
+    },
     link: function ($scope) {
     	
     }

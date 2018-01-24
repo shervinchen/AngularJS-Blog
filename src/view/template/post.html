@@ -1,7 +1,7 @@
 <article class="post">
-  <a class="post-title">Node.js 中的 DES 加解密</a>
-  <time class="post-meta">November 24, 2017</time>
+  <a class="post-title" ng-bind="postData.postTitle"></a>
+  <time class="post-meta" ng-bind="postData.postDate"></time>
   <!-- 这一部分就是通过markdown渲染的文章 -->
   <div app-post-content post-content-data="postData.postContent"></div>
-  <div app-post-tags></div>
+  <div app-post-tags post-tag-datas="postData.postTag"></div>
 </article>
