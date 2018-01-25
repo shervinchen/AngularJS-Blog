@@ -3,5 +3,6 @@
   <time class="post-meta" ng-bind="postData.postDate"></time>
   <!-- 这一部分就是通过markdown渲染的文章 -->
   <div app-post-content post-content-data="postData.postContent"></div>
-  <div app-post-tags post-tag-datas="postData.postTag"></div>
+  <div app-post-tags post-tag-datas="postData.postTags"></div>
+  <div app-post-categories post-categories-datas="postData.postCategories"></div>
 </article>
