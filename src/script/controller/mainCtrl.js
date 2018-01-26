@@ -14,7 +14,7 @@ BlogApp.controller('mainCtrl', ['$stateParams', '$http', '$scope',
         // angular.forEach($scope.postlist, function(item, key) {
         //     item.postContent = item.postContent.split('<!--more-->')[0];
         // });
-      	console.log($scope.postlist);
+      	
     }, function(response) {
         // 请求失败执行代码
         console.log('request failed');

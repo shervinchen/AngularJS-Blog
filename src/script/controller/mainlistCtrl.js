@@ -11,10 +11,9 @@ BlogApp.controller('mainlistCtrl', ['$stateParams', '$http', '$scope',
     }).then(function(response) {
         $scope.postlist = response.data;
         // 根据<!--more-->来截取文章列表显示的部分
-        angular.forEach($scope.postlist, function(item, key) {
-            item.postContent = item.postContent.split('<!--more-->')[0];
-        });
-      	console.log($scope.postlist);
+        // angular.forEach($scope.postlist, function(item, key) {
+        //     item.postContent = item.postContent.split('<!--more-->')[0];
+        // });
     }, function(response) {
         // 请求失败执行代码
         console.log('request failed');
