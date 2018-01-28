@@ -8,10 +8,10 @@ BlogApp.directive('appPostListNavigator', ['$http', '$stateParams', function($ht
     templateUrl: 'view/template/postListNavigator.html',
     restrict: 'ECAM',
     replace: true,
-    controller: function($scope) {
+    controller: ['$scope', function($scope) {
       $http({
         method: 'GET',
-        url: 'http://localhost:3000/api/postcount'
+        url: 'http://api.rekodsc.com/postcount'
       }).then(function(response) {
         // 最多可选分页按钮 其余按钮被省略
         var maxPageLink = 5;
@@ -64,7 +64,7 @@ BlogApp.directive('appPostListNavigator', ['$http', '$stateParams', function($ht
         // 请求失败执行代码
         console.log('request failed');
       });
-    },
+    }],
     link: function($scope) {
 
     }
