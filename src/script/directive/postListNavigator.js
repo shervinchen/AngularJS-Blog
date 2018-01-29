@@ -34,7 +34,7 @@ BlogApp.directive('appPostListNavigator', ['$http', '$stateParams', function($ht
         }
         // 判断是否显示分页上一步按钮
         $scope.isShowPre = false;
-        if ($scope.currentPage > 1 && totalPage > 5) {
+        if ($scope.currentPage > 1 && totalPage > maxPageLink) {
           $scope.isShowPre = true;
         } else {
           $scope.isShowPre = false;
@@ -51,14 +51,13 @@ BlogApp.directive('appPostListNavigator', ['$http', '$stateParams', function($ht
         for (var i = 1; i < totalPage + 1; i++) {
           $scope.pageIndexs.push(i);
         }
-        if ($scope.currentPage > 1 && totalPage > 5) {
-          if (totalPage - $scope.currentPage < 4) {
-            $scope.pageIndexs = $scope.pageIndexs.slice(totalPage - 5, totalPage);
-          } else {
-            $scope.pageIndexs = $scope.pageIndexs.slice($scope.currentPage - 1, $scope.currentPage + 4);
-          }
+        if ($scope.currentPage < (maxPageLink + 1) / 2) {
+          $scope.pageIndexs = $scope.pageIndexs.slice(0, maxPageLink);
+        } else if (totalPage - $scope.currentPage < (maxPageLink - 1) / 2) {
+          $scope.pageIndexs = $scope.pageIndexs.slice(totalPage - maxPageLink, totalPage);
         } else {
-          $scope.pageIndexs = $scope.pageIndexs.slice(0, 5);
+          $scope.pageIndexs = $scope.pageIndexs.slice($scope.currentPage - (maxPageLink + 1) / 2, 
+            $scope.currentPage + (maxPageLink - 1) / 2);
         }
       }, function(response) {
         // 请求失败执行代码
