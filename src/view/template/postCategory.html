@@ -1,17 +1,8 @@
 <section class="post-category">
   <h3 class="title">分类</h3>
   <ul class="list">
-    <li>
-      <a href="#">前端开发</a> (16)
-    </li>
-    <li>
-      <a href="javascript:;">生活</a> (0)
-    </li>
-    <li>
-      <a href="javascript:;">Python</a> (3)
-    </li>
-    <li>
-      <a href="javascript:;">未分类</a> (4)
+    <li ng-repeat="postCategoryData in postCategoryDatas">
+      <a href="javascript:;" ng-bind="postCategoryData.postCategoryName"></a> (<span ng-bind="postCategoryData.postCategoryCount"></span>)
     </li>
   </ul>
 </section>

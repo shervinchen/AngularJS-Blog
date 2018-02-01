@@ -13,7 +13,7 @@ BlogApp.directive('appPostCategory', ['$http', function($http) {
 			method: 'GET',
 			url: 'http://localhost:3000/postcategory'
 		}).then(function(response) {
-			$scope.categories = response.data;
+			$scope.postCategoryDatas = response.data;
 		}, function(response) {
 			// 请求失败执行代码
 			console.log('request failed');
