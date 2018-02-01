@@ -28,6 +28,10 @@
           font-size: 14px;
         }
         .comment-name {
+          max-width: 20%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
           font-weight: 400;
           margin-right: 10px;
           color: #333;
@@ -39,13 +43,24 @@
             }
           }
         }
+        .comment-anchor {
+          color: @blogColor;
+          font-size: 14px;
+          margin-right: 10px;
+          cursor: pointer;
+        }
         .comment-time {
+          max-width: 50%;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
           color: #bbb;
           font-weight: 200;
           font-size: 12px;
         }
         .comment-reply {
           float: right;
+          margin-right: 10px;
           a {
             font-weight: 200;
             color: @blogColor;
@@ -53,6 +68,11 @@
               text-decoration: underline;
             }
           }
+        }
+        .comment-floor {
+          float: right;
+          color: #bbb;
+          font-size: 14px;
         }
       }
       .comment-content {
@@ -64,7 +84,19 @@
       }
     }
     .comments-list {
-      margin-left: 50px;
+      margin-left: 32px;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .comments-list {
+    // margin-bottom: 18px;
+    .comment {
+      // padding-top: 12px;
+      .comments-list {
+        // margin-left: 16px;
+      }
     }
   }
 }
