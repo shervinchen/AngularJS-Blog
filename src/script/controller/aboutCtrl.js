@@ -7,7 +7,7 @@ BlogApp.controller('aboutCtrl', ['$http', '$scope',
   function($http, $scope) {
     $http({
         method: 'GET',
-        url: 'http://api.rekodsc.com/post?postId=01'
+        url: 'http://localhost:3000/post?postId=01'
     }).then(function(response) {
         $scope.post = response.data;
         console.log($scope.post);

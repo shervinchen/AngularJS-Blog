@@ -11,7 +11,7 @@ BlogApp.directive('appPostRecent', ['$http', function($http) {
     controller: ['$scope', function($scope) {
       $http({
         method: 'GET',
-        url: 'http://api.rekodsc.com/postrecent'
+        url: 'http://localhost:3000/postrecent'
       }).then(function(response) {
         $scope.postRecentDatas = response.data;
       }, function(response) {

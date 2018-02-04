@@ -1,6 +1,10 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var open = require('open');
+var replace = require('gulp-replace');
+
+var TEST_API = 'http://localhost:3000';
+var DIST_API = 'http://api.rekodsc.com';
 
 /**
  * 定义文件路径
@@ -79,6 +83,7 @@ gulp.task('js', function() {
 	.pipe($.plumber())
 	.pipe($.concat('index.js'))
 	.pipe(gulp.dest(app.devPath + 'js'))
+	.pipe($.replace(TEST_API, DIST_API))
 	.pipe($.uglify())
 	.pipe(gulp.dest(app.prdPath + 'js'))
 	.pipe($.connect.reload());

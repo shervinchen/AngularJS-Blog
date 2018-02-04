@@ -11,7 +11,7 @@ BlogApp.directive('appPostListNavigator', ['$http', '$stateParams', function($ht
     controller: ['$scope', function($scope) {
       $http({
         method: 'GET',
-        url: 'http://api.rekodsc.com/postcount'
+        url: 'http://localhost:3000/postcount'
       }).then(function(response) {
         // 最多可选分页按钮 其余按钮被省略
         var maxPageLink = 5;
