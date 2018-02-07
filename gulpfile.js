@@ -4,7 +4,7 @@ var open = require('open');
 var replace = require('gulp-replace');
 
 var TEST_API = 'http://localhost:3000';
-var DIST_API = 'http://api.rekodsc.com';
+var DIST_API = 'https://api.rekodsc.com';
 
 /**
  * 定义文件路径
