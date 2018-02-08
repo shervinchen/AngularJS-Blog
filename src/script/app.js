@@ -5,4 +5,4 @@
 */
 'use strict';
 
-var BlogApp = angular.module("BlogApp", ['ui.router', 'ngCookies', 'ngSanitize']);
+var BlogApp = angular.module("BlogApp", ['ui.router', 'ngCookies', 'ngSanitize', 'ngTagCloud']);

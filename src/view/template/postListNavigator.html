@@ -1,11 +1,11 @@
 <ol class="page-navigator">
   <li class="pre" ng-if="isShowPre">
-    <a ui-sref-active="current" ui-sref="mainlist({page:prePage})">« 前一页</a>
+    <a ui-sref-active="current" ui-sref="main({page:prePage})">« 前一页</a>
   </li>
   <li ng-repeat="pageIndex in pageIndexs">
-    <a ui-sref-active="current" ng-bind="pageIndex" ui-sref="mainlist({page:pageIndex})"></a>
+    <a ui-sref-active="current" ng-bind="pageIndex" ui-sref="main({page:pageIndex})"></a>
   </li>
   <li class="next" ng-if="isShowNext">
-    <a ui-sref-active="current" ui-sref="mainlist({page:nextPage})">后一页 »</a>
+    <a ui-sref-active="current" ui-sref="main({page:nextPage})">后一页 »</a>
   </li>
 </ol>

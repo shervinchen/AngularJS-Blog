@@ -6,7 +6,7 @@
 BlogApp.config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
     	$stateProvider.state('main', {
-    		url: '/main',
+    		url: '/main?page',
     		templateUrl: 'view/main.html',
     		controller: 'mainCtrl'
     	}).state('about', {
@@ -18,14 +18,15 @@ BlogApp.config(['$stateProvider', '$urlRouterProvider',
         templateUrl: 'view/post.html',
         controller: 'postCtrl'
       }).state('search', {
-          url: '/search/:keyword',
+          url: '/search?keyword',
           templateUrl: 'view/search.html',
           controller: 'searchCtrl'
-      }).state('mainlist', {
-          url: '/mainlist/:page',
-          templateUrl: 'view/main.html',
-          controller: 'mainlistCtrl'
       });
     	$urlRouterProvider.otherwise("main");
 	}
 ]);
+
+/* 配置路由的html5mode */
+BlogApp.config(['$locationProvider', function($locationProvider) {  
+    $locationProvider.html5Mode({enabled: true, requireBase: false});
+}]);
