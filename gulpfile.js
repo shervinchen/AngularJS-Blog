@@ -76,13 +76,23 @@ gulp.task('less', function() {
 });
 
 /**
- * js文件
+ * build-js文件
  */
-gulp.task('js', function() {
-	gulp.src(app.srcPath + 'script/**/*.js')
+gulp.task('js_build', function() {
+	gulp.src([app.srcPath + 'script/**/*.js', '!' + app.srcPath + 'script/**/routerMode.js'])
 	.pipe($.plumber())
 	.pipe($.concat('index.js'))
 	.pipe(gulp.dest(app.devPath + 'js'))
+	.pipe($.connect.reload());
+});
+
+/**
+ * dist-js文件
+ */
+gulp.task('js_dist', function() {
+	gulp.src(app.srcPath + 'script/**/*.js')
+	.pipe($.plumber())
+	.pipe($.concat('index.js'))
 	.pipe($.replace(TEST_API, DIST_API))
 	.pipe($.uglify())
 	.pipe(gulp.dest(app.prdPath + 'js'))
@@ -101,7 +111,7 @@ gulp.task('image', function() {
 	.pipe($.connect.reload());
 });
 
-gulp.task('build', ['lib', 'bower', 'html', 'json', 'md', 'less', 'js', 'image']);
+gulp.task('build', ['lib', 'bower', 'html', 'json', 'md', 'less', 'js_build', 'js_dist', 'image']);
 
 gulp.task('clean', function() {
 	gulp.src([app.devPath, app.prdPath])
@@ -122,7 +132,7 @@ gulp.task('serve', ['build'], function() {
 	gulp.watch(app.srcPath + 'data/**/*.json', ['json']);
 	gulp.watch(app.srcPath + 'data/**/*.md', ['md']);
 	gulp.watch(app.srcPath + 'style/**/*.less', ['less']);
-	gulp.watch(app.srcPath + 'script/**/*.js', ['js']);
+	gulp.watch(app.srcPath + 'script/**/*.js', ['js_build', 'js_dist']);
 	gulp.watch(app.srcPath + 'image/**/*', ['image']);
 });
 

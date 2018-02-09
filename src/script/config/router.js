@@ -21,12 +21,11 @@ BlogApp.config(['$stateProvider', '$urlRouterProvider',
           url: '/search?keyword',
           templateUrl: 'view/search.html',
           controller: 'searchCtrl'
+      }).state('/', {
+          url: '/',
+          templateUrl: 'view/main.html',
+          controller: 'mainCtrl'
       });
     	$urlRouterProvider.otherwise("main");
 	}
 ]);
-
-/* 配置路由的html5mode */
-BlogApp.config(['$locationProvider', function($locationProvider) {  
-    $locationProvider.html5Mode({enabled: true, requireBase: false});
-}]);
