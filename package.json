@@ -27,6 +27,8 @@
     "gulp-concat": "^2.6.1",
     "gulp-connect": "^5.0.0",
     "gulp-cssmin": "^0.2.0",
+    "gulp-footer": "^2.0.1",
+    "gulp-header": "^2.0.1",
     "gulp-imagemin": "^4.0.0",
     "gulp-less": "^3.3.2",
     "gulp-load-plugins": "^1.5.0",

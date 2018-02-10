@@ -2,6 +2,8 @@ var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
 var open = require('open');
 var replace = require('gulp-replace');
+var header = require('gulp-header');
+var footer = require('gulp-footer');
 
 var TEST_API = 'http://localhost:3000';
 var DIST_API = 'https://api.rekodsc.com';
@@ -82,6 +84,8 @@ gulp.task('js_build', function() {
 	gulp.src([app.srcPath + 'script/**/*.js', '!' + app.srcPath + 'script/**/routerMode.js'])
 	.pipe($.plumber())
 	.pipe($.concat('index.js'))
+	.pipe(header('(function(){'))
+	.pipe(footer('})();'))
 	.pipe(gulp.dest(app.devPath + 'js'))
 	.pipe($.connect.reload());
 });
@@ -93,6 +97,8 @@ gulp.task('js_dist', function() {
 	gulp.src(app.srcPath + 'script/**/*.js')
 	.pipe($.plumber())
 	.pipe($.concat('index.js'))
+	.pipe(header('(function(){'))
+	.pipe(footer('})();'))
 	.pipe($.replace(TEST_API, DIST_API))
 	.pipe($.uglify())
 	.pipe(gulp.dest(app.prdPath + 'js'))
