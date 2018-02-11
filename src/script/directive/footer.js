@@ -5,7 +5,7 @@
 */
 BlogApp.directive('appFooter', [function() {
   return {
-    templateUrl: 'view/template/footer.html',
+    templateUrl: '/view/template/footer.html',
     restrict: 'ECAM',
     replace: true,
     link: function ($scope) {

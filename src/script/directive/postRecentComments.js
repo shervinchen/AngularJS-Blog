@@ -5,7 +5,7 @@
 */
 BlogApp.directive('appPostRecentComments', [function() {
   return {
-    templateUrl: 'view/template/postRecentComments.html',
+    templateUrl: '/view/template/postRecentComments.html',
     restrict: 'ECAM',
     replace: true,
     link: function ($scope) {

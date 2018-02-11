@@ -5,7 +5,7 @@
 */
 BlogApp.directive('appPostTag', ['$http', function($http) {
   return {
-    templateUrl: 'view/template/postTag.html',
+    templateUrl: '/view/template/postTag.html',
     restrict: 'ECAM',
     replace: true,
     scope: {

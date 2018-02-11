@@ -5,7 +5,7 @@
 */
 BlogApp.directive('appHeader', ['ENTER_CODE', '$state', function(ENTER_CODE, $state) {
   return {
-    templateUrl: 'view/template/header.html',
+    templateUrl: '/view/template/header.html',
     restrict: 'ECAM',
     replace: true,
     link: function ($scope) {
@@ -13,7 +13,7 @@ BlogApp.directive('appHeader', ['ENTER_CODE', '$state', function(ENTER_CODE, $st
     	$scope.search = function(e) {
     		var keycode = window.event ? e.keyCode : e.which;
             if (keycode == ENTER_CODE) {
-                $state.go('search', {keyword: $scope.searchKeyWord});
+                $state.go('search', {keyword: $scope.searchKeyWord, page: 1});
             }
     	};
     }

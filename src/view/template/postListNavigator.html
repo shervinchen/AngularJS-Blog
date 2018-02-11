@@ -1,11 +1,20 @@
 <ol class="page-navigator">
   <li class="pre" ng-if="isShowPre">
-    <a ui-sref-active="current" ui-sref="main({page:prePage})">« 前一页</a>
+    <a ng-if="isMainRoute" ui-sref-active="current" ui-sref="main({page:prePage})">« 前一页</a>
+    <a ng-if="isSearchRoute" ui-sref-active="current" ui-sref="search({page:prePage})">« 前一页</a>
+    <a ng-if="isTagRoute" ui-sref-active="current" ui-sref="tag({page:prePage})">« 前一页</a>
+    <a ng-if="isCategoryRoute" ui-sref-active="current" ui-sref="category({page:prePage})">« 前一页</a>
   </li>
   <li ng-repeat="pageIndex in pageIndexs">
-    <a ui-sref-active="current" ng-bind="pageIndex" ui-sref="main({page:pageIndex})"></a>
+    <a ng-if="isMainRoute" ui-sref-active="current" ng-bind="pageIndex" ui-sref="main({page:pageIndex})"></a>
+    <a ng-if="isSearchRoute" ui-sref-active="current" ng-bind="pageIndex" ui-sref="search({page:pageIndex})"></a>
+    <a ng-if="isTagRoute" ui-sref-active="current" ng-bind="pageIndex" ui-sref="tag({page:pageIndex})"></a>
+    <a ng-if="isCategoryRoute" ui-sref-active="current" ng-bind="pageIndex" ui-sref="category({page:pageIndex})"></a>
   </li>
   <li class="next" ng-if="isShowNext">
-    <a ui-sref-active="current" ui-sref="main({page:nextPage})">后一页 »</a>
+    <a ng-if="isMainRoute" ui-sref-active="current" ui-sref="main({page:nextPage})">后一页 »</a>
+    <a ng-if="isSearchRoute" ui-sref-active="current" ui-sref="search({page:nextPage})">后一页 »</a>
+    <a ng-if="isTagRoute" ui-sref-active="current" ui-sref="tag({page:nextPage})">后一页 »</a>
+    <a ng-if="isCategoryRoute" ui-sref-active="current" ui-sref="category({page:nextPage})">后一页 »</a>
   </li>
 </ol>

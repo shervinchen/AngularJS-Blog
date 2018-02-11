@@ -5,7 +5,7 @@
 */
 BlogApp.directive('appPostTags', [function() {
   return {
-    templateUrl: 'view/template/postTags.html',
+    templateUrl: '/view/template/postTags.html',
     restrict: 'ECAM',
     replace: true,
     scope: {

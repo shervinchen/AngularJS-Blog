@@ -3,8 +3,8 @@
 * CreateTime: 2017/12/25
 * Tips: 博客主页——文章列表页控制器
 */
-BlogApp.controller('mainCtrl', ['$stateParams', '$http', '$scope',
-  function($stateParams, $http, $scope) {
+BlogApp.controller('mainCtrl', ['$state', '$stateParams', '$http', '$scope',
+  function($state, $stateParams, $http, $scope) {
     var pageIndex = 0;
     if ($stateParams.page === undefined) {
         pageIndex = 1;
@@ -22,6 +22,9 @@ BlogApp.controller('mainCtrl', ['$stateParams', '$http', '$scope',
         // });
     }, function(response) {
         // 请求失败执行代码
+        if (response.status === 404) {
+            $state.go('error');
+        }
         console.log('request failed');
     });
   }

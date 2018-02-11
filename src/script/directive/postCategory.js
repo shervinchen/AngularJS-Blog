@@ -5,7 +5,7 @@
 */
 BlogApp.directive('appPostCategory', ['$http', function($http) {
   return {
-    templateUrl: 'view/template/postCategory.html',
+    templateUrl: '/view/template/postCategory.html',
     restrict: 'ECAM',
     replace: true,
     link: function ($scope) {

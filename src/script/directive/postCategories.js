@@ -5,7 +5,7 @@
 */
 BlogApp.directive('appPostCategories', [function() {
   return {
-    templateUrl: 'view/template/postCategories.html',
+    templateUrl: '/view/template/postCategories.html',
     restrict: 'ECAM',
     replace: true,
     scope: {

@@ -5,7 +5,7 @@
  */
 BlogApp.directive('appPostRecent', ['$http', function($http) {
   return {
-    templateUrl: 'view/template/postRecent.html',
+    templateUrl: '/view/template/postRecent.html',
     restrict: 'ECAM',
     replace: true,
     controller: ['$scope', function($scope) {

@@ -5,7 +5,7 @@
 */
 BlogApp.directive('appPostList', [function() {
   return {
-    templateUrl: 'view/template/postList.html',
+    templateUrl: '/view/template/postList.html',
     restrict: 'ECAM',
     replace: true,
     scope: {

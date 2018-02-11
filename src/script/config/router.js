@@ -7,25 +7,29 @@ BlogApp.config(['$stateProvider', '$urlRouterProvider',
     function($stateProvider, $urlRouterProvider) {
     	$stateProvider.state('main', {
     		url: '/main/:page',
-    		templateUrl: 'view/main.html',
+    		templateUrl: '/view/main.html',
     		controller: 'mainCtrl'
     	}).state('about', {
     		url: '/about',
-    		templateUrl: 'view/about.html',
+    		templateUrl: '/view/about.html',
     		controller: 'aboutCtrl'
     	}).state('post', {
         url: '/post/:postid',
-        templateUrl: 'view/post.html',
+        templateUrl: '/view/post.html',
         controller: 'postCtrl'
       }).state('search', {
-          url: '/search/:keyword',
-          templateUrl: 'view/search.html',
+          url: '/search/:keyword/:page',
+          templateUrl: '/view/search.html',
           controller: 'searchCtrl'
+      }).state('error', {
+          url: '/error',
+          templateUrl: '/view/error.html',
+          controller: 'errorCtrl'
       }).state('/', {
           url: '/',
-          templateUrl: 'view/main.html',
+          templateUrl: '/view/main.html',
           controller: 'mainCtrl'
       });
-    	$urlRouterProvider.otherwise("main");
+    	$urlRouterProvider.otherwise("/");
 	}
 ]);

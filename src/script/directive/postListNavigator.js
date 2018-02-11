@@ -3,12 +3,26 @@
  * CreateTime: 2017/12/30
  * Tips: main-列表分页指令模块
  */
-BlogApp.directive('appPostListNavigator', ['$http', '$stateParams', function($http, $stateParams) {
+BlogApp.directive('appPostListNavigator', ['$http', '$state', '$stateParams', function($http, $state, $stateParams) {
   return {
-    templateUrl: 'view/template/postListNavigator.html',
+    templateUrl: '/view/template/postListNavigator.html',
     restrict: 'ECAM',
     replace: true,
     controller: ['$scope', function($scope) {
+      $scope.isMainRoute = false;
+      $scope.isSearchRoute = false;
+      $scope.isTagRoute = false;
+      $scope.isCategoryRoute = false;
+      // 判断跳转的路由
+      if ($state.$current.name === 'main' || $state.$current.name === '/') {
+        $scope.isMainRoute = true;
+      } else if ($state.$current.name === 'search') {
+        $scope.isSearchRoute = true;
+      } else if ($state.$current.name === 'tag') {
+        $scope.isTagRoute = true;
+      } else {
+        $scope.isCategoryRoute = true;
+      }
       $http({
         method: 'GET',
         url: 'http://localhost:3000/postcount'
@@ -20,7 +34,11 @@ BlogApp.directive('appPostListNavigator', ['$http', '$stateParams', function($ht
         // 获取文章总数
         var totalPost = response.data.postcount;
         // 获取当前页数
-        $scope.currentPage = $stateParams.page === undefined ? 1 : parseInt($stateParams.page);
+        if ($stateParams.page === undefined) {
+          $scope.currentPage = 1;
+        } else {
+          $scope.currentPage = parseInt($stateParams.page);
+        }
         // 获取上一页
         $scope.prePage = $scope.currentPage - 1;
         // 获取下一页
