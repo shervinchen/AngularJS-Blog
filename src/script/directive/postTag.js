@@ -11,30 +11,16 @@ BlogApp.directive('appPostTag', ['$http', function($http) {
     scope: {
       // data: '='
     },
-    controller: ['$scope', function($scope) {
-    	$scope.postTagDatas = [
-          {text: "Lorem", weight: 8, link: "https://google.com"},
-          {text: "Ipsum", weight: 7, link: "https://google.com"},
-          {text: "Dolor", weight: 7, link: "https://google.com"},
-          {text: "Sit", weight: 9, link: "https://google.com"},
-          {text: "Amet", weight: 10, link: "https://google.com"},
-          {text: "Lorem", weight: 7, link: "https://google.com"},
-          {text: "Ipsum", weight: 8, link: "https://google.com"},
-          {text: "Dolor", weight: 7, link: "https://google.com"},
-          {text: "Sit", weight: 9, link: "https://google.com"},
-          {text: "Amet", weight: 8, link: "https://google.com"}
-        ];
-	}],
+    controller: ['$rootScope', '$scope', function($rootScope, $scope) {
+      $scope.postTagDatas = $rootScope.tags;
+      $scope.$watch('tags', function(newVal){
+        if(newVal) {
+          $scope.postTagDatas = $rootScope.tags;
+        }
+      });
+    }],
     link: function ($scope) {
-		// $http({
-		// 	method: 'GET',
-		// 	url: 'http://localhost:3000/posttag'
-		// }).then(function(response) {
-		// 	$scope.postTagDatas = response.data;
-		// }, function(response) {
-		// 	// 请求失败执行代码
-		// 	console.log('request failed');
-		// });
+		  
     }
   };
 }]);

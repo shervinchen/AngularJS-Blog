@@ -1,4 +1,4 @@
 <p class="tags">
 	<span>标签：</span>
-	<a href="javascript:;" ng-click="" ng-repeat="postTagData in postTagDatas" ng-bind="postTagData.text"></a>
+	<a ui-sref="tag({tag: postTagData.text, page: ''})" ng-click="" ng-repeat="postTagData in postTagDatas" ng-bind="postTagData.text"></a>
 </p>

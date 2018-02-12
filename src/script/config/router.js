@@ -21,6 +21,10 @@ BlogApp.config(['$stateProvider', '$urlRouterProvider',
           url: '/search/:keyword/:page',
           templateUrl: '/view/search.html',
           controller: 'searchCtrl'
+      }).state('tag', {
+          url: '/tag/:tag/:page',
+          templateUrl: '/view/tag.html',
+          controller: 'tagCtrl'
       }).state('error', {
           url: '/error',
           templateUrl: '/view/error.html',

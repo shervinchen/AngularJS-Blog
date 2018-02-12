@@ -15,7 +15,8 @@ BlogApp.controller('mainCtrl', ['$state', '$stateParams', '$http', '$scope',
         method: 'GET',
         url: 'http://localhost:3000/postlist?page='+pageIndex
     }).then(function(response) {
-        $scope.postlist = response.data;
+        $scope.postlist = response.data.data;
+        $scope.postcount = response.data.count;
         // 根据<!--more-->来截取文章列表显示的部分
         // angular.forEach($scope.postlist, function(item, key) {
         //     item.postContent = item.postContent.split('<!--more-->')[0];
