@@ -5,6 +5,7 @@
 */
 BlogApp.controller('mainCtrl', ['$state', '$stateParams', '$http', '$scope',
   function($state, $stateParams, $http, $scope) {
+    // console.log(tagDatas);
     var pageIndex = 0;
     if ($stateParams.page === undefined) {
         pageIndex = 1;
