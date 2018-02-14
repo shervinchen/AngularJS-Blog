@@ -11,11 +11,14 @@ BlogApp.directive('appPostTag', ['$http', function($http) {
     scope: {
       // postTagDatas: '='
     },
-    controller: ['$rootScope', '$scope', function($rootScope, $scope) {
-      $scope.postTagDatas = $rootScope.tags;
+    controller: ['$scope', function($scope) {
+      $scope.$watch('posttag', function(newVal){
+        if(newVal) {
+          console.log($scope.posttag);
+        }
+      });
     }],
     link: function ($scope) {
-      // console.log($scope.postTagDatas);
     }
   };
 }]);

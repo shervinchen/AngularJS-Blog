@@ -16,14 +16,6 @@ BlogApp.value('globalDatas', {}).run(['globalDatas', '$http', function(globalDat
 
 BlogApp.run(['$rootScope', '$http',
 	function($rootScope, $http) {
-	   $http({
-            method: 'GET',
-            url: 'http://localhost:3000/posttag'
-        }).then(function(response) {
-            $rootScope.tags = response.data;
-        }, function(response) {
-            // 请求失败执行代码
-            console.log('request failed');
-        });
+	   
 	}
 ]);
