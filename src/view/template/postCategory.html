@@ -2,7 +2,7 @@
   <h3 class="title">分类</h3>
   <ul class="list">
     <li ng-repeat="postCategoryData in postCategoryDatas">
-      <a href="javascript:;" ng-bind="postCategoryData.postCategoryName"></a> (<span ng-bind="postCategoryData.postCategoryCount"></span>)
+      <a ui-sref="category({category:postCategoryData.postCategoryName, page:''})" ng-bind="postCategoryData.postCategoryName"></a> (<span ng-bind="postCategoryData.postCategoryCount"></span>)
     </li>
   </ul>
 </section>

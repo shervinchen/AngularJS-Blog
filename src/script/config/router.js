@@ -25,6 +25,10 @@ BlogApp.config(['$stateProvider', '$urlRouterProvider',
           url: '/tag/:tag/:page',
           templateUrl: '/view/tag.html',
           controller: 'tagCtrl'
+      }).state('category', {
+          url: '/category/:category/:page',
+          templateUrl: '/view/category.html',
+          controller: 'categoryCtrl'
       }).state('error', {
           url: '/error',
           templateUrl: '/view/error.html',

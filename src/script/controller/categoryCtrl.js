@@ -1,15 +1,15 @@
 /**
 * Author: csdoker
-* CreateTime: 2018/2/12
-* Tips: 标签页控制器
+* CreateTime: 2018/2/22
+* Tips: 分类页控制器
 */
-BlogApp.controller('tagCtrl', ['$state', '$stateParams', '$http', '$scope',
+BlogApp.controller('categoryCtrl', ['$state', '$stateParams', '$http', '$scope',
   function($state, $stateParams, $http, $scope) {
-  	$scope.tag = $stateParams.tag;
+  	$scope.category = $stateParams.category;
 
     $http({
         method: 'GET',
-        url: 'http://localhost:3000/taglist?tag='+$stateParams.tag+'&page='+$stateParams.page
+        url: 'http://localhost:3000/categorylist?category='+$stateParams.category+'&page='+$stateParams.page
     }).then(function(response) {
         $scope.postlist = response.data.data;
         $scope.postcount = response.data.count;

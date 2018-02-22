@@ -29,15 +29,5 @@ BlogApp.controller('mainCtrl', ['$state', '$stateParams', '$http', '$scope',
       }
       console.log('request failed');
     });
-    $http({
-      method: 'GET',
-      url: 'http://localhost:3000/posttag'
-    }).then(function(response) {
-      // $scope.posttag = response.data;
-      $scope.posttag = 35;
-    }, function(response) {
-      // 请求失败执行代码
-      console.log('request failed');
-    });
   }
 ]);

@@ -9,16 +9,21 @@ BlogApp.directive('appPostTag', ['$http', function($http) {
     restrict: 'ECAM',
     replace: true,
     scope: {
-      // postTagDatas: '='
+      
     },
     controller: ['$scope', function($scope) {
-      $scope.$watch('posttag', function(newVal){
-        if(newVal) {
-          console.log($scope.posttag);
-        }
+      $http({
+        method: 'GET',
+        url: 'http://localhost:3000/posttag'
+      }).then(function(response) {
+        $scope.postTagDatas = response.data;
+      }, function(response) {
+        // 请求失败执行代码
+        console.log('request failed');
       });
     }],
     link: function ($scope) {
+      
     }
   };
 }]);

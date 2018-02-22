@@ -1,0 +1,22 @@
+<!--
+  Author: csdoker
+  CreateTime: 2018/2/22
+  Tips: 分类页
+ -->
+<div app-header></div>
+<div class="body">
+	<div class="container">
+		<div class="container-left">
+			<h3 class="archive-title">分类“<strong ng-bind="category"></strong>”下的文章</h3>
+			<div app-post-list post-list-datas="postlist"></div>
+			<div app-post-list-navigator></div>
+		</div>
+		<div class="container-right">
+			<div app-post-recent></div>
+			<div app-post-category></div>
+			<div app-post-tag></div>
+			<div app-post-recent-comments></div>
+		</div>
+	</div>
+</div>
+<div app-footer></div>

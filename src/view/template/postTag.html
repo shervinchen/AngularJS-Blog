@@ -1,6 +1,8 @@
 <section class="post-tag">
   <h3 class="title">标签云</h3>
   <div class="content">
-    <ng-tag-cloud class="tag-cloud" cloud-width="260" cloud-height="300" cloud-data="postTagDatas"></ng-tag-cloud>
+  	<!-- 单独开页面加载标签云特效 -->
+    <!-- <ng-tag-cloud class="tag-cloud" cloud-width="260" cloud-height="300" cloud-data="postTagDatas"></ng-tag-cloud> -->
+    <a ui-sref="tag({tag:postTagData.text, page:''})" ng-class="'tag-ft'+postTagData.weight" ng-repeat="postTagData in postTagDatas" ng-bind="postTagData.text"></a>
   </div>
 </section>
